@@ -39,7 +39,7 @@ EOT
     subscription_id      = string
     description          = optional(string)
     display_name         = optional(string)
-    enforce              = optional(bool, true)
+    enforce              = optional(bool) # Default: true
     location             = optional(string)
     metadata             = optional(string)
     not_scopes           = optional(list(string))
@@ -55,7 +55,7 @@ EOT
     overrides = optional(object({
       selectors = optional(object({
         in     = optional(list(string))
-        kind   = optional(string, "policyDefinitionReferenceId")
+        kind   = optional(string) # Default: "policyDefinitionReferenceId"
         not_in = optional(list(string))
       }))
       value = string
